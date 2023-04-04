@@ -1,0 +1,64 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+}
+
+.main-container form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 80%;
+}
+
+.main-container form label {
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.main-container form input[type="text"],
+.main-container form textarea,
+.main-container form input[type="email"] {
+  padding: 1rem 2rem;
+  border: 1px solid #d6d6d4;
+  background: #fff;
+  transition: outline 0.25s, border-color 0.25s;
+
+}
+
+.main-container form input:focus,
+.main-container form input:focus-visible,
+.main-container form textarea:focus,
+.main-container form textarea:focus-visible {
+  border-color: #333029;
+  outline: 1px solid #333029;
+}
+
+
+.main-container form .input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.main-container form input[type="submit"]:hover,
+.main-container form input[type="submit"]:focus,
+.main-container form input[type="submit"]:focus-visible {
+  box-shadow: 0 7px 9px #00000026,0 9px 25px #0000001a;
+}
+.main-container form input[type="submit"] {
+  background-color: #000000;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.25s;
+}
+
+.main-container form .input-field.submit-field {
+  justify-content: center;
+  align-items: center;
+}

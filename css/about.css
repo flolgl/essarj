@@ -1,0 +1,18 @@
+.main-container .content-container {
+  text-align: justify;
+  padding: 0 3rem 1rem 3rem;
+  white-space: pre-line;
+  max-width: 670px;
+  margin: 0;
+}
+
+.main-container {
+  display: grid;
+  margin: 0;
+  place-items: center center;
+}
+
+.main-container .content-title-container h3{
+  font-size: 1.5em;
+  margin: 2rem 2rem 1rem 2rem;
+}
