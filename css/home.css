@@ -112,30 +112,33 @@ section.carousel ol, section.carousel li {
   background-size: cover;
 }
 .first-section #carousel__slide1 {
-  background-image: url(../img/background/background-1.jpg);
+  background-image: url(../img/background/background-1.webp);
 }
-
 .first-section #carousel__slide2 {
-  background-image: url(../img/background/background-2.jpg);
+  background-image: url(https://github.com/flolgl/essarj/raw/master/img/background/background-2.jpg);
 }
 .first-section #carousel__slide3 {
-  background-image: url(../img/background/background-3.jpg);
+  background-image: url(../img/background/background-3.webp);
 }
 .first-section #carousel__slide4 {
-  background-image: url(../img/background/background-4.jpg);
+  background-image: url(../img/background/background-4.webp);
 }
 .first-section #carousel__slide5 {
-  background-image: url(../img/background/background-5.jpg);
+  background-image: url(../img/background/background-5.webp);
 }
 .first-section #carousel__slide6 {
-  background-image: url(../img/background/background-6.jpg);
+  background-image: url(../img/background/background-6.webp);
 }
 .first-section #carousel__slide7 {
-  background-image: url(../img/background/background-7.jpg);
+  background-image: url(../img/background/background-7.webp);
 }
 .first-section #carousel__slide8 {
-  background-image: url(../img/background/background-8.jpg);
+  background-image: url(../img/background/background-8.webp);
 }
 .first-section #carousel__slide9 {
-  background-image: url(../img/background/background-9.jpg);
+  background-image: url(../img/background/background-9.webp);
+}
+
+body {
+  background-color: #222222;
 }
