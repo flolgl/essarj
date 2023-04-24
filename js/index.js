@@ -1,5 +1,12 @@
+/**
+ * @type {Record<string, Record<string, Array<string>>>}
+ */
 const LANGUES = {
   "fr": {
+    "title[data-page='contact']": ["Essarj | Nous contacter"],
+    "title[data-page='about']": ["Essarj | A propos"],
+    "title[data-page='home']": ["Essarj | Accueil"],
+    "title[data-page='find-us']": ["Essarj | Où nous trouver ?"],
     ".nav-menu-list .nav-menu-item a": [
       "A propos",
       "Où nous trouver ?",
@@ -61,6 +68,10 @@ const LANGUES = {
     ]
   },
   "en": {
+    "title[data-page='contact']": ["Essarj | Contact"],
+    "title[data-page='about']": ["Essarj | About us"],
+    "title[data-page='home']": ["Essarj | Home"],
+    "title[data-page='find-us']": ["Essarj | Where to find us?"],
     ".nav-menu-list .nav-menu-item a": [
       "About us",
       "Where to find us?",
@@ -123,7 +134,6 @@ const LANGUES = {
   }
 }
 
-
 const nav = document.querySelector("nav");
 window.addEventListener("scroll", () => scrollY > 30 ? nav.classList.add("scrolled") : nav.classList.remove("scrolled"));
 
@@ -135,13 +145,20 @@ const navButtonRemove = navMenu.querySelector(".cross-container svg ");
 navButton.addEventListener("click", () => navMenu.classList.add("show"));
 const wrapper = document.querySelector(".nav-menu-container .wrapper");
 
-const languageSelectorOptions = document.querySelectorAll(".nav-menu-container .langue-container select option");
+const languageSelector = document.querySelector(".nav-menu-container .langue-container select");
+/*
 languageSelectorOptions.forEach(value => {
   value.addEventListener("click", evt => {
     setLangageCookie(evt.target.value);
     init();
   })
 });
+ */
+
+languageSelector.addEventListener("change", () => {
+  setLangageCookie(languageSelector.options[languageSelector.selectedIndex].value);
+  init();
+})
 
 const removeNavBar = () => {
   navMenu.classList.remove("show");
@@ -150,17 +167,17 @@ const removeNavBar = () => {
 wrapper.addEventListener("click", () => removeNavBar())
 navButtonRemove.addEventListener("click", () => removeNavBar());
 
-const setLangageCookie = locale => document.cookie = `langue=${locale}; SameSite=Lax; Secure`;
+const setLangageCookie = locale => document.cookie = `langue=${locale}; SameSite=Lax;`;
 
 const getLangage = () => {
   const cookie = document.cookie.split("; ").find((row) => row.startsWith("langue="))?.split("=")[1];
-  return LANGUES[cookie ? cookie : navigator.language];
+  return cookie ? [cookie, LANGUES[cookie ? cookie : navigator.language]] : ["en", LANGUES["en"]];
 }
 
 const init = () =>  {
-  const locale = getLangage();
+  const [language, locale] = getLangage();
+  languageSelector.value = language;
   Object.entries(locale).forEach(([key, value]) => {
-    console.log(key, value);
 
     if (key.includes("submit"))
       return document.querySelectorAll(key)?.forEach((div, index) => div.value = value[index]);
